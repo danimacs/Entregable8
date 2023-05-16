@@ -28,6 +28,9 @@ jobs:
     - name: Publish .NET Core Project
       run: dotnet publish Entregable8.csproj -c Release -o release --nologo
 
+    - name: cp index.html to 404.html
+      run: cp release/wwwroot/index.html release/wwwroot/404.html
+
     - name: Publish en GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       
